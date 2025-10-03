@@ -1,0 +1,269 @@
+# ========================================
+# Marabutan Framework - GitIgnore
+# ========================================
+# Comprehensive gitignore for TypeScript/JavaScript frontend framework
+# Includes coverage, build outputs, IDE files, and common artifacts
+
+# ========================================
+# Node.js & Package Management
+# ========================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependencies (if using lockfiles, keep them - if not, ignore)
+# package-lock.json (uncomment if you want to ignore)
+# yarn.lock (uncomment if you want to ignore)
+# pnpm-lock.yaml (uncomment if you want to ignore)
+
+# ========================================
+# Build Outputs & Distribution
+# ========================================
+dist/
+build/
+out/
+.next/
+.nuxt/
+.vitepress/dist/
+
+# TypeScript compilation outputs
+*.tsbuildinfo
+
+# ESBuild/Vite outputs
+dist-*/
+
+# ========================================
+# Testing & Coverage
+# ========================================
+coverage/
+.nyc_output/
+*.lcov
+coverage-final.json
+
+# Test results
+test-results/
+playwright-report/
+cypress/videos/
+cypress/screenshots/
+
+# ========================================
+# Development & IDE
+# ========================================
+# Visual Studio Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# JetBrains IDEs
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Sublime Text
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
+*.sublime-project
+
+# Vim
+[._]*.s[a-v][a-z]
+!*.svg
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# ========================================
+# OS Generated Files
+# ========================================
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Icon?
+
+# Linux
+*~
+
+# ========================================
+# Logs & Runtime Data
+# ========================================
+logs/
+*.log
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional stylelint cache
+.stylelintcache
+
+# Microbundle cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# parcel-bundler cache (https://parceljs.org/)
+.cache
+.parcel-cache
+
+# next.js build output
+.next
+
+# nuxt.js build output
+.nuxt
+
+# vuepress build output
+.vuepress/dist
+
+# Serverless directories
+.serverless
+
+# FuseBox cache
+.fusebox/
+
+# DynamoDB Local files
+.dynamodb/
+
+# TernJS port file
+.tern-port
+
+# Stores VSCode versions used for testing VSCode extensions
+.vscode-test
+
+# yarn v2
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+
+# ========================================
+# Environment & Configuration
+# ========================================
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Environment overrides
+.env.development
+.env.test
+.env.production
+
+# API keys and secrets (if you use them)
+.env.secrets
+
+# ========================================
+# Documentation (if generated)
+# ========================================
+docs/_book/
+docs/.vuepress/dist/
+
+# ========================================
+# Temporary Files
+# ========================================
+tmp/
+temp/
+*.tmp
+*.temp
+
+# ========================================
+# Framework Specific
+# ========================================
+# Vite
+.vite/
+
+# Vitest
+.vitest/
+
+# TypeScript
+*.tsbuildinfo
+
+# ========================================
+# Project Specific (Marabutan)
+# ========================================
+# JSX runtime outputs (if generated)
+jsx-runtime.js
+jsx-dev-runtime.js
+
+# Test debug outputs
+test-jsx-debug.tsx
+
+# Demo outputs
+demo/
+
+# ========================================
+# Optional: Uncomment if you want to ignore
+# ========================================
+# Lock files (choose your package manager)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# IDE specific files
+# *.swp
+# *.swo
+# *~
+
+# Backup files
+# *.bak
+# *.backup
