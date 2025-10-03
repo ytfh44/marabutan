@@ -1,7 +1,7 @@
 /// <reference types="vitest" />
 import { defineConfig } from 'vite'
 
-export default defineConfig({
+export default defineConfig(({ command, mode }) => ({
   test: {
     environment: 'jsdom',
     globals: true,
@@ -16,9 +16,7 @@ export default defineConfig({
         'src/**/*.d.ts',
         'src/main.ts',
         'src/demo/**',
-        'src/examples/index.ts',
-        'src/examples/templates.ts',
-        'src/examples/components-jsx.tsx',
+        'src/examples/**',
         'src/counter.ts',
         'src/index.ts',
       ],
@@ -39,4 +37,34 @@ export default defineConfig({
     jsx: 'automatic',
     jsxImportSource: '.',
   },
-})
+  build: {
+    // Default library build configuration
+    lib: {
+      entry: 'src/index.ts',
+      formats: ['es']
+    },
+    // Exclude examples directory from build
+    rollupOptions: {
+      external: (id) => {
+        // Exclude examples from the build
+        return id.includes('/examples/') || id.includes('?examples') || id.endsWith('.test.ts') || id.endsWith('.test.tsx') || id.endsWith('.spec.ts');
+      },
+      output: mode === 'min' ? {
+        // Single minified file for browser usage
+        format: 'iife',
+        entryFileNames: 'marabutan.min.js',
+        inlineDynamicImports: true,
+        globals: {},
+      } : {
+        // Library build - ESM format for npm packages
+        format: 'es',
+        entryFileNames: '[name].js',
+        chunkFileNames: '[name].js',
+        assetFileNames: '[name].[ext]',
+      }
+    },
+    // Minification settings
+    minify: mode === 'min' ? 'esbuild' : false,
+    sourcemap: mode === 'min' ? false : true,
+  }
+}))
