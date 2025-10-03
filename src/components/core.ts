@@ -4,7 +4,8 @@ import type {
   ComponentDefinition,
   ComponentInstance,
   ComponentFactory,
-  ComponentProps
+  ComponentProps,
+  ComponentRegistryInterface
 } from './types';
 import { applyMixins, executeLifecycle } from '../mixins/core';
 import type { MixedState } from '../mixins/types';
@@ -295,7 +296,7 @@ export function createComponent<T extends object = Record<string, unknown>, P ex
  * Component Registry
  * Manages named components and their instances
  */
-export class ComponentRegistry {
+export class ComponentRegistry implements ComponentRegistryInterface {
   private components = new Map<string, ComponentFactory<any, any>>();
   private instances = new Map<string, ComponentInstance<any, any>>();
 
@@ -444,7 +445,7 @@ export function getDefaultRegistry(): ComponentRegistry {
 
 /**
  * Get a component instance from the global registry
- * 
+ *
  * @param name - Component name
  * @returns Component instance or undefined if not found
  */
@@ -452,5 +453,12 @@ export function getComponentInstance<T extends object = Record<string, unknown>,
   name: string
 ): ComponentInstance<T, P> | undefined {
   return defaultRegistry.getInstance(name);
+}
+
+/**
+ * Get registry statistics
+ */
+export function getRegistryStats(): { count: number; names: string[]; componentCount?: number; instanceCount?: number } {
+  return defaultRegistry.getStats();
 }
 

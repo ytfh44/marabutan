@@ -1,8 +1,17 @@
 {
   "name": "marabutan",
-  "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "A modern JavaScript frontend framework built with TypeScript, featuring MVI (Model-View-Intent) architecture, virtual DOM, and a powerful mixins system",
   "type": "module",
+  "main": "dist/marabutan.js",
+  "types": "dist/marabutan.d.ts",
+  "files": [
+    "dist",
+    "jsx-runtime.js",
+    "jsx-dev-runtime.js",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build --mode lib",
@@ -15,6 +24,28 @@
     "test:watch": "vitest --watch",
     "test:ui": "vitest --ui",
     "test:cov:check": "vitest run --coverage --coverage.thresholds.lines=75"
+  },
+  "keywords": [
+    "frontend",
+    "framework",
+    "mvi",
+    "model-view-intent",
+    "virtual-dom",
+    "jsx",
+    "typescript",
+    "reactive",
+    "components",
+    "mixins"
+  ],
+  "author": "Marabutan Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-username/marabutan.git"
+  },
+  "homepage": "https://github.com/your-username/marabutan#readme",
+  "bugs": {
+    "url": "https://github.com/your-username/marabutan/issues"
   },
   "devDependencies": {
     "@types/node": "^24.6.1",

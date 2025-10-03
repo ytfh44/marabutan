@@ -1,0 +1,49 @@
+# Development files
+src/
+coverage/
+docs/
+test-jsx-debug.tsx
+
+# Test files
+**/*.test.ts
+**/*.test.tsx
+**/*.spec.ts
+
+# Demo and examples
+demo/
+examples/
+
+# Development tools and configs
+tsconfig.json
+vite.config.ts
+vitest.config.ts
+
+# Git files
+.git/
+.gitignore
+
+# Node modules (if any)
+node_modules/
+
+# Build artifacts that shouldn't be included
+# (only the dist/ folder will be included via package.json "files" field)
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Coverage reports (except the final json for CI)
+coverage/**/*
+!coverage/coverage-final.json
+
+# Temporary files
+*.tmp
+*.temp

@@ -88,7 +88,7 @@ class ContextRegistry {
     
     // 然后从store查找
     const entry = this.store.get(id);
-    return entry ? entry.value : defaultValue;
+    return entry ? (entry.value as T) : defaultValue;
   }
 
   /**

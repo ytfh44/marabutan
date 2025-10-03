@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { createComponent, ComponentRegistry, registerComponent, registerErrorHandler, createComponentInstance, getComponentInstance, getRegistryStats } from './core';
-import { ComponentDefinition } from './types';
+import type { ComponentDefinition } from './types';
 
 describe('Component System', () => {
   describe('createComponent', () => {

@@ -107,9 +107,9 @@ export type ComponentFactory<T extends object = Record<string, unknown>, P exten
 ) => ComponentInstance<T, P>;
 
 /**
- * Component registry for managing named components
+ * Component registry interface for managing named components
  */
-export interface ComponentRegistry {
+export interface ComponentRegistryInterface {
   register<T extends object, P extends ComponentProps>(
     name: string,
     factory: ComponentFactory<T, P>

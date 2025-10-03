@@ -5,7 +5,7 @@ import type { Dispatch } from '../mvi/types';
  * Lifecycle hook function type
  * 逆变（contravariant）在 state 参数 - 可以接受更泛化的状态类型
  */
-export type LifecycleHook<T = any> = (
+export type LifecycleCallback<T = any> = (
   state: T,
   dispatch?: Dispatch<unknown>,
   vnode?: VNode
@@ -18,16 +18,16 @@ export type LifecycleHook<T = any> = (
  */
 export interface MixinLifecycle<T = any> {
   /** Called when component is created */
-  created?: LifecycleHook<T>;
+  created?: LifecycleCallback<T>;
   
   /** Called before rendering */
-  beforeRender?: LifecycleHook<T>;
+  beforeRender?: LifecycleCallback<T>;
   
   /** Called after rendering */
   afterRender?: (state: T, vnode: VNode) => void | Promise<void>;
   
   /** Called when component is destroyed */
-  destroyed?: LifecycleHook<T>;
+  destroyed?: LifecycleCallback<T>;
 }
 
 /**
